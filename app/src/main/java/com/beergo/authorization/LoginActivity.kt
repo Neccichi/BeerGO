@@ -68,15 +68,26 @@ class LoginActivity : AppCompatActivity() {
     fun setTermsTextColors(termsofuse: TextView, context: Context) {
         val termsTextContent = "By continuing, you agree to BeerGO’s Terms of\nService and Privacy Policy"
         val termsTextSpannable = SpannableString(termsTextContent)
-
-        val customColorSpan = ForegroundColorSpan(ContextCompat.getColor(context, R.color.text_color_login_edittext))
-        termsTextSpannable.setSpan(customColorSpan, 0, "By continuing, you agree to BeerGO’s".length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-
-        val whiteSpanTerms = ForegroundColorSpan(Color.WHITE)
-        termsTextSpannable.setSpan(whiteSpanTerms, "By continuing, you agree to BeerGO’s".length, termsTextContent.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-
+        val greyColor = ContextCompat.getColor(context, R.color.text_color_login_edittext)
+        val whiteColor = Color.WHITE
+        val greySpan1 = ForegroundColorSpan(greyColor)
+        termsTextSpannable.setSpan(greySpan1, 0, "By continuing, you agree to BeerGO’s ".length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        val whiteSpan1 = ForegroundColorSpan(whiteColor)
+        val startIndexOfTerms = "By continuing, you agree to BeerGO’s ".length
+        val endIndexOfTerms = startIndexOfTerms + "Terms of\nService".length
+        termsTextSpannable.setSpan(whiteSpan1, startIndexOfTerms, endIndexOfTerms, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        val greySpan2 = ForegroundColorSpan(greyColor)
+        val startIndexOfAnd = endIndexOfTerms + 1
+        val endIndexOfAnd = startIndexOfAnd + "and".length
+        termsTextSpannable.setSpan(greySpan2, startIndexOfAnd, endIndexOfAnd, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        val whiteSpan2 = ForegroundColorSpan(whiteColor)
+        val startIndexOfPolicy = endIndexOfAnd + 1
+        val endIndexOfPolicy = startIndexOfPolicy + "Privacy Policy".length
+        termsTextSpannable.setSpan(whiteSpan2, startIndexOfPolicy, endIndexOfPolicy, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         termsofuse.text = termsTextSpannable
     }
+
+
     fun onLoginButtonClicked() {
         val sharedPreferences = getSharedPreferences("UserPreferences", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
