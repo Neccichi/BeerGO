@@ -22,7 +22,6 @@ import com.ismaeldivita.chipnavigation.ChipNavigationBar
 class MainActivity : AppCompatActivity() {
     lateinit var chipNavigationBar: ChipNavigationBar
     lateinit var loadingScreen: ImageView
-    lateinit var parentLayout: RelativeLayout
     lateinit var container: ConstraintLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
