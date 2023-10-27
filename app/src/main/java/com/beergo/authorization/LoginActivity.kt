@@ -3,12 +3,18 @@ package com.beergo.authorization
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.Rect
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.text.style.ForegroundColorSpan
+import android.view.MotionEvent
 import android.view.View
+import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.beergo.MainActivity
@@ -18,6 +24,8 @@ class LoginActivity : AppCompatActivity() {
     lateinit var logoText: TextView
     lateinit var termsofuse: TextView
     lateinit var login: TextView
+    lateinit var email: EditText
+    lateinit var password: EditText
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         window.decorView.systemUiVisibility = (
@@ -41,10 +49,28 @@ class LoginActivity : AppCompatActivity() {
             }
         }
         setContentView(R.layout.activity_login)
+
+        val mainLayout: View = findViewById(R.id.mainId) // id вашего основного layout
+        mainLayout.setOnTouchListener { _, event ->
+            if (event.action == MotionEvent.ACTION_DOWN) {
+                val v = currentFocus
+                if ( v is EditText) {
+                    val outRect = Rect()
+                    v.getGlobalVisibleRect(outRect)
+                    if (!outRect.contains(event.rawX.toInt(), event.rawY.toInt())) {
+                        v.clearFocus()
+                        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                        imm.hideSoftInputFromWindow(v.windowToken, 0)
+                    }
+                }
+            }
+            false
+        }
         logoText = findViewById(R.id.logoText)
         termsofuse = findViewById(R.id.termsofuse)
         login = findViewById(R.id.login)
-
+        email = findViewById(R.id.email)
+        password = findViewById(R.id.password)
         setLogoTextColors(logoText)
         setTermsTextColors(termsofuse, this)
         login.setOnClickListener {
