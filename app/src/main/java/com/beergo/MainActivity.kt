@@ -1,5 +1,7 @@
 package com.beergo
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -10,6 +12,7 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
+import com.beergo.authorization.LoginActivity
 import com.beergo.fragment_beer.BeerFragment
 import com.beergo.fragment_mail.MailFragment
 import com.beergo.fragment_profile.ProfileFragment
@@ -25,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var container: ConstraintLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        checkLoginStatus()
         window.decorView.systemUiVisibility = (
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
@@ -68,6 +72,16 @@ class MainActivity : AppCompatActivity() {
                 else -> BeerFragment()
             }
             replaceFragment(fragment)
+        }
+    }
+    fun checkLoginStatus() {
+        val sharedPreferences = getSharedPreferences("UserPreferences", Context.MODE_PRIVATE)
+        val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
+
+        if (!isLoggedIn) {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
     private fun replaceFragment(fragment: Fragment) {

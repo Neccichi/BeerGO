@@ -17,91 +17,91 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.22" />
+        app:layout_constraintGuide_percent="0.2" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/line3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.24" />
+        app:layout_constraintGuide_percent="0.22" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/line4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.32" />
+        app:layout_constraintGuide_percent="0.28" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/line5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.36" />
+        app:layout_constraintGuide_percent="0.32" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/line6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.44" />
+        app:layout_constraintGuide_percent="0.38" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/line7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.46" />
+        app:layout_constraintGuide_percent="0.4" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/line8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.54" />
+        app:layout_constraintGuide_percent="0.46" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/line9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.58" />
+        app:layout_constraintGuide_percent="0.5" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/line10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.64" />
+        app:layout_constraintGuide_percent="0.56" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/line11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.68" />
+        app:layout_constraintGuide_percent="0.6" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/line12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.72" />
+        app:layout_constraintGuide_percent="0.68" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/line13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.76" />
+        app:layout_constraintGuide_percent="0.72" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/line14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.82" />
+        app:layout_constraintGuide_percent="0.80" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/line15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.86" />
+        app:layout_constraintGuide_percent="0.82" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/line16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.92" />
+        app:layout_constraintGuide_percent="0.9" />
 
     <TextView
         android:id="@+id/logoText"
@@ -162,7 +162,7 @@
         android:layout_marginEnd="16dp"
         android:text="Login"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:fontFamily="@font/poppins_semibold"
         android:gravity="center"
         android:background="@drawable/rounded_btn_login"
@@ -179,7 +179,7 @@
         android:layout_marginEnd="16dp"
         android:text="Registration"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:fontFamily="@font/poppins_semibold"
         android:gravity="center"
         android:background="@drawable/rounded_btn_login"
@@ -222,6 +222,8 @@
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toTopOf="@+id/line14"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -232,6 +234,8 @@
         android:id="@+id/imageView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toTopOf="@+id/line16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
